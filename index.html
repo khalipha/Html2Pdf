@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+ 
+
+
+<!-- <button id="PrintPage" class="btn btn-success">Print Pdf</button> -->
+
+  <div class="row">
+   
+    <div class="col-2"></div>  <!-- Start - Left Empty Panel --> 
+      <div class="col-8" >     <!-- Start - Center Content Panel -->
+               
+                    
+         <div id="MyHtmlData">        <!-- Start - Div to extract from -->
+            <div class="row">        <!-- Start - Column Rows -->
+       
+    
+  
+                <br>
+            
+        
+                   <h1 style="text-align:center;font-size: 18px;">Telephone Account Statement</h1>   
+                   <hr> 
+
+    
+            
+                <div class="col-6" style="float:left;"> 
+                    Account Number:  266836                   <br>
+                    Employee Number: 70396701                  <br>  
+                    Account Holder:  Moonsamy Manoah - LT COL  <br>
+                    Department: BRAMLEY SUPPORT SERVICES       <br>
+                    Phone Number: 0114454133                   <br>
+                    Email:    moonsamymanoah@saps.gov.za       <br>
+                </div>
+                
+                
+                <div class="col-6" > <img style="float:right;"  width="134" height="130" src="https://turntable.kagiso.io/images/police-logo.width-800.png"/> </div>
+    
+                
+    
+                   <br>
+                   <hr> 
+          
+    
+            
+                <div class="col-4"><p style="text-align:left; font-size: 12px;"><b>Account Statement for: </b></p></div>
+                <div class="col-4"><p style="text-align:center; font-size: 12px;"><b>January 2023</b></p></div> 
+                <div class="col-4"><p style="text-align:right; font-size: 12px;"><b>  Printed date: <span id="PrintedDate"></span></b></p></div>
+           
+    
+            
+                <hr> 
+ 
+     
+      
+               <h1 style="text-align:center;font-size: 18px">Account Summary</h1>
+               <hr> 
+
+    
+    
+      
+            <div class="col-6" >   
+                Opening Balance:                              <br>
+                Payments Received:                            <br>  
+                Reversed Official Calls                       <br>
+                Call Charges                                  <br>
+                Amount Due ( as of 1/31/2023)                 <br>
+            </div>
+            
+
+            <div class="col-6" style="text-align:right;"> 
+                R809.85  <br>
+                (R0.00)  <br>
+                (R0.00)  <br>
+                R40.29   <br>
+                R850.14  <br>
+    
+            </div>
+      
+    
+    
+     
+    
+      
+           <h1 style="text-align:center;font-size: 18px;">Account Payments</h1>
+    
+           <div style="padding:10px;">
+                <table id="tbAccountPayments" class="table table-bordered table-sm" style="border-style:solid;">
+                    <thead>
+                    <tr>
+                        <th>Payment Date</th>
+                        <th>Amount</th>
+                        <th>Reference</th>
+                        <th>Comment</th>
+                    </tr>
+                </thead>
+                   <tbody></tbody>
+                </table>
+            </div>
+
+    
+    
+    
+
+             <h1 style="text-align:center;font-size: 18px">Reversed Official Call Charges</h1>
+    
+             <div style="padding:10px;">
+                <table id="tbROfficialCallCharges" class="table table-bordered table-sm"  style="border-style:solid;">
+                    <thead>
+                        <tr>
+                        <th scope="col">Approved Date</th>
+                        <th scope="col">Number Dialed</th>
+                        <th scope="col">Call Date</th>
+                        <th scope="col">Call Time</th>
+                        <th scope="col">Call Cost</th>
+                        <th scope="col">Comment</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+    
+    
+     
+    
+    
+    
+          <h1 style="text-align:center;font-size: 18px">Private Call Charges</h1>
+    
+          <div style="padding:10px;">
+          <table class="table table-bordered table-sm" style="border-style:solid;">
+             <tr style="height:26pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">Dialing Number</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;padding-right: 30pt;text-indent: 0pt;text-align: left;">Number Dialed</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">Call Date</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">Call Time</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">Call Duration</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">Destination</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">Amount</p>
+                </td>
+             </tr>
+             <tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0860765633</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/16</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">11:49:33</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:07:16</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">1000.71</p>
+                </td>
+             </tr>
+             <tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0767858652</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/16</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">15:36:10</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:01:28</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">0.95</p>
+                </td>
+             </tr>
+             <tr style="height:26pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0123343513</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/17</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">07:59:31</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:04:02</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">PRETORIA</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">1.21</p>
+                </td>
+             </tr>
+             <tr style="height:26pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0113047756</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/17</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">09:46:09</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:08:22</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;padding-right: 30pt;text-indent: 0pt;text-align: left;">BENMORE GARDENS</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2.51</p>
+                </td>
+             </tr>
+             <tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0800001870</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/20</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">10:55:37</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:16:53</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">10.94</p>
+                </td>
+             </tr>
+             <tr style="height:26pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0124294105</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/20</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">11:16:11</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:00:05</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">SUNNYSIDE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">0.02</p>
+                </td>
+             </tr>
+             <tr style="height:26pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0124292176</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/20</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">11:17:33</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:06:03</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">SUNNYSIDE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">1.81</p>
+                </td>
+             </tr>
+             <tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0794659880</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/23</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">11:47:47</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:07:59</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">5.17</p>
+                </td>
+             </tr>
+             <tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0827771091</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/23</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">14:51:11</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:03:14</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2.10</p>
+                </td>
+             </tr>
+             <tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0764799829</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/23</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">15:02:47</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:07:22</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">4.77</p>
+                </td>
+             </tr>
+             <tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0870860073</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/26</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">07:54:06</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:01:55</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">1.24</p>
+                </td>
+             </tr>
+             <tr style="height:26pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0117885010</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/30</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">11:30:44</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:07:01</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">ROSEBANK</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2.10</p>
+                </td>
+             </tr>
+             <tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0794945250</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/31</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">07:31:11</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:00:10</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">0.11</p>
+                </td>
+             </tr>
+             <tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0794945250</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/31</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">07:40:06</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:04:05</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2.65</p>
+                </td>
+             </tr>
+             <!-- Start - added by Swe -->
+             <tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0794945250</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/31</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">07:40:06</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:04:05</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2.65</p>
+                </td>
+             </tr>
+             <tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0794945250</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/31</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">07:40:06</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:04:05</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2.65</p>
+                </td>
+             </tr>
+             <tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0794945250</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/31</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">07:40:06</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:04:05</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2.65</p>
+                </td>
+             </tr>
+             <tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0794945250</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/31</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">07:40:06</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:04:05</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2.65</p>
+                </td>
+             </tr>
+             <tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0794945250</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/31</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">07:40:06</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:04:05</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2.65</p>
+                </td>
+             </tr><tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0794945250</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/31</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">07:40:06</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:04:05</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2.65</p>
+                </td>
+             </tr><tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0794945250</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/31</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">07:40:06</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:04:05</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2.65</p>
+                </td>
+             </tr><tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0794945250</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/31</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">07:40:06</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:04:05</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2.65</p>
+                </td>
+             </tr><tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0794945250</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/31</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">07:40:06</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:04:05</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2.65</p>
+                </td>
+             </tr><tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0794945250</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/31</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">07:40:06</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:04:05</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2.65</p>
+                </td>
+             </tr><tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0794945250</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/31</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">07:40:06</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:04:05</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2.65</p>
+                </td>
+             </tr><tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0794945250</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/31</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">07:40:06</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:04:05</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2.65</p>
+                </td>
+             </tr><tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0794945250</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/31</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">07:40:06</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:04:05</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2.65</p>
+                </td>
+             </tr><tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0794945250</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/31</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">07:40:06</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:04:05</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2.65</p>
+                </td>
+             </tr><tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0794945250</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/31</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">07:40:06</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:04:05</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2.65</p>
+                </td>
+             </tr><tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0794945250</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/31</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">07:40:06</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:04:05</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2.65</p>
+                </td>
+             </tr><tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0112747699</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">0794945250</p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2023/01/31</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">07:40:06</p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">00:04:05</p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">MOBILE</p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">2.65</p>
+                </td>
+             </tr>
+             <!-- End   - added by Swe -->
+             <tr style="height:17pt">
+                <td style="width:92pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s5" style="padding-top: 1pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">Total</p>
+                </td>
+                <td style="width:69pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p style="text-indent: 0pt;text-align: left;"><br/></p>
+                </td>
+                <td style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p style="text-indent: 0pt;text-align: left;"><br/></p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p style="text-indent: 0pt;text-align: left;"><br/></p>
+                </td>
+                <td style="width:82pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p style="text-indent: 0pt;text-align: left;"><br/></p>
+                </td>
+                <td style="width:85pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p style="text-indent: 0pt;text-align: left;"><br/></p>
+                </td>
+                <td style="width:67pt;border-top-style:solid;border-top-width:1pt;border-top-color:#D2D2D2;border-left-style:solid;border-left-width:1pt;border-left-color:#D2D2D2;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#D2D2D2;border-right-style:solid;border-right-width:1pt;border-right-color:#D2D2D2">
+                   <p class="s4" style="padding-top: 1pt;text-indent: 0pt;text-align: right;">R40.29</p>
+                </td>
+             </tr>
+          </table>
+        </div>
+       
+    
+            <!-- Start Footer & Signatures -->
+    
+             
+                   <div class="col-6">
+                      <p style="padding-top: 4pt;padding-left: 8pt;text-indent: -1pt;line-height: 216%;text-align: left;">Signature: <u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u></p>
+                   </div>
+    
+                   <div class="col-6">
+                      <p style="padding-top: 4pt;padding-left: 8pt;text-indent: -1pt;line-height: 216%;text-align: left;">Authorized By: <u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u></p>
+                   </div>           
+           
+    
+    
+             
+                <div class="col-6">
+                   <p style="padding-top: 4pt;padding-left: 8pt;text-indent: -1pt;line-height: 216%;text-align: left;">Date: &nbsp; &nbsp; &nbsp; &nbsp;  <u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u></p>
+                </div>
+                
+                <div class="col-6">
+                   <p style="padding-top: 4pt;padding-left: 8pt;text-indent: -1pt;line-height: 216%;text-align: left;">Date: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   <u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp;<u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u><u>&nbsp; </u> </u></p>
+                </div>     
+                
+                
+                <br><br><br>
+                
+                    <p style="text-align:center; font-size: 10px;color:red">
+                        <b>
+                        NOTICE - This statement summary contains call record details supplied by a third party system for telephone 
+                        management and account billing purposes. Note aligned to the Public Finance Management Act and as part of 
+                        the act of recovering, any missing or invalid calls identified in the future date will be recalculated and then added 
+                        to your telephone account.
+                       </b>
+                    </p>
+                
+          
+    
+            <!-- End Footer & Signatures -->
+
+      
+                </div>  <!-- End - Row Start Tag-->
+            </div>  <!-- End - Div to Extract HTML Data from -->        
+          </div> <!-- End - Center Div Col-8 --> 
+       <div class="col-2"><button id="PrintPage" class="btn btn-success">Print Pdf</button></div>   <!-- End - Right Empty Panel --> 
+   </div>
+
+
+  
+</body>
+</html>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="printThis.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+        <script src="AccountStatement.js"></script>
+     
+<!--      
+     <script>
+        $( document ).ready(function() {
+            $('#PrintPage').click(function(){
+            $('#MyHtmlData').printThis();     
+            });
+        });
+    </script> -->
